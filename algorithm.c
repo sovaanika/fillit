@@ -6,33 +6,24 @@
 /*   By: bbear <bbear@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/29 17:12:38 by bbear             #+#    #+#             */
-/*   Updated: 2019/01/10 20:34:21 by bbear            ###   ########.fr       */
+/*   Updated: 2019/01/11 18:44:31 by bbear            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include <stdio.h>
 
-int	ft_sqrt(int nb)
+void	solution(t_list *figures)
 {
-	int	res;
+	int		mapsize;
+	t_map	*map;
+	int		i;
 
-	res = 1;
-	while (res * res != nb)
+	i = 0;
+	mapsize = ft_sqrt(countfig(figures) * 4);
+	map = createmap(mapsize);
+	while (i < mapsize)
 	{
-		if (res * res >= nb)
-		{
-			return (res);
-		}
-		++res;
+		ft_putendl(map->map[i]);
+		i++;
 	}
-	return (0);
-}
-
-char	solution(t_list *figures)
-{
-	int	mapsize;
-
-	mapsize =
-	//нужно узнать количество фигурок, создать все-таки структуру под карту, а то маллочить каждый раз слишком дорого
 }

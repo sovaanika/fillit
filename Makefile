@@ -1,5 +1,5 @@
 NAME = fillit
-SRC = validation.c functionsforvalid.c errors.c main.c
+SRC = validation.c functionsforvalid.c errors.c forfigures.c algorithm.c mapfunctions.c main.c
 INC = fillit.h
 LIB = ./libft/
 
