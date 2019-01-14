@@ -6,11 +6,16 @@
 /*   By: bbear <bbear@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/29 17:12:38 by bbear             #+#    #+#             */
-/*   Updated: 2019/01/11 18:44:31 by bbear            ###   ########.fr       */
+/*   Updated: 2019/01/12 20:51:47 by bbear            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+
+void	puttomap(t_map **map)
+{
+
+}
 
 void	solution(t_list *figures)
 {

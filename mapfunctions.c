@@ -6,7 +6,7 @@
 /*   By: bbear <bbear@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/11 18:39:22 by bbear             #+#    #+#             */
-/*   Updated: 2019/01/11 18:44:05 by bbear            ###   ########.fr       */
+/*   Updated: 2019/01/12 16:30:55 by bbear            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int		ft_sqrt(int nb)
 		}
 		++res;
 	}
+	if (res * res == nb)
+		return (res);
 	return (0);
 }
 
@@ -33,7 +35,7 @@ int		countfig(t_list *figures)
 	t_list	*nxt;
 	int		count;
 
-	count = 0;
+	count = 1;
 	nxt = figures;
 	while (nxt->next != NULL)
 	{
