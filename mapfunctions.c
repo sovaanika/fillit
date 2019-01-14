@@ -6,7 +6,7 @@
 /*   By: bbear <bbear@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/11 18:39:22 by bbear             #+#    #+#             */
-/*   Updated: 2019/01/12 16:30:55 by bbear            ###   ########.fr       */
+/*   Updated: 2019/01/14 16:54:02 by bbear            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,14 @@ t_map	*createmap(int size)
 
 	i = 0;
 	new = (t_map *)malloc(sizeof(*new));
-	arr = (char **)malloc(size * sizeof(char *));
+	arr = (char **)malloc((size + 1) * sizeof(char *));
 	while (i < size)
 	{
 		arr[i] = ft_strnew(size);
 		arr[i] = ft_memset(arr[i], '.', size);
 		i++;
 	}
+	arr[i] = '\0';
 	new->map = arr;
 	new->size = size;
 	return (new);
@@ -74,7 +75,7 @@ void	delmap(t_map **map)
 	i = 0;
 	size = (*map)->size;
 	mp = (*map)->map;
-	while (i < size)
+	while (i < size + 1)
 	{
 		free(mp[i]);
 		mp[i] = NULL;
