@@ -6,7 +6,7 @@
 /*   By: bbear <bbear@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/11 18:39:22 by bbear             #+#    #+#             */
-/*   Updated: 2019/01/14 16:54:02 by bbear            ###   ########.fr       */
+/*   Updated: 2019/01/17 19:04:21 by bbear            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ t_map	*createmap(int size)
 		arr[i] = ft_memset(arr[i], '.', size);
 		i++;
 	}
-	arr[i] = '\0';
+	arr[i] = ft_strnew(0);
 	new->map = arr;
 	new->size = size;
 	return (new);
@@ -87,11 +87,14 @@ void	delmap(t_map **map)
 	*map = NULL;
 }
 
-t_map	*mapresize(int size, t_map **mapold)
+t_map	*mapresize(t_map **mapold)
 {
 	t_map	*newmap;
+	int		size;
 
+	size = (*mapold)->size;
 	delmap(mapold);
 	newmap = createmap(size + 1);
+	newmap->size = size + 1;
 	return (newmap);
 }

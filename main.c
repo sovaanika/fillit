@@ -6,7 +6,7 @@
 /*   By: bbear <bbear@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/08 18:12:57 by bbear             #+#    #+#             */
-/*   Updated: 2019/01/12 16:27:04 by bbear            ###   ########.fr       */
+/*   Updated: 2019/01/20 02:59:56 by bbear            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int		main(int argc, char **argv)
 		return (-1);
 	}
 	fd = open(argv[1], O_RDONLY);
-	//printf("%d", ft_sqrt(4));
-	solution(f1(fd));
+	solution(validation(fd));
 	return (0);
 }

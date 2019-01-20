@@ -6,11 +6,26 @@
 /*   By: bbear <bbear@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/06 17:33:58 by bbear             #+#    #+#             */
-/*   Updated: 2019/01/10 19:08:31 by bbear            ###   ########.fr       */
+/*   Updated: 2019/01/16 18:22:55 by bbear            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+
+void	check_newline(char *buff)
+{
+	int	res;
+
+	res = 0;
+	buff[4] == '\n' ? res++ : 0;
+	buff[9] == '\n' ? res++ : 0;
+	buff[14] == '\n' ? res++ : 0;
+	buff[19] == '\n' ? res++ : 0;
+	if (buff[20] == '\n' || buff[20] == '\0')
+		res++;
+	if (res != 5)
+		ft_error();
+}
 
 int		check_map(char *buff)
 {
@@ -19,6 +34,7 @@ int		check_map(char *buff)
 
 	chk_d = 0;
 	flag = 0;
+	check_newline(buff);
 	while (*buff && flag < 2)
 	{
 		if (*buff == '.')
